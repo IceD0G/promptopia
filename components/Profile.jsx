@@ -1,15 +1,7 @@
 import PromptCard from '@components/PromptCard';
 import React from 'react';
 
-interface Props {
-  name: string;
-  desc: string;
-  data: any[];
-  handleEdit: (post: any) => void;
-  handleDelete: (post: any) => void;
-}
-
-const Profile = ({ name, desc, data, handleEdit, handleDelete }: Props) => {
+const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
   return (
     <section className={'w-full'}>
       <h1 className={'head_text text-left'}>

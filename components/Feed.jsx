@@ -1,15 +1,9 @@
 'use client';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import PromptCard from '@components/PromptCard';
-import { clearTimeout } from 'timers';
 import { useDebounceEffect } from '@utils/useDebounce';
 
-interface Props {
-  data: any[];
-  handleTagClick: (tag: string) => void;
-}
-
-const PromptCardList = ({ data, handleTagClick }: Props) => {
+const PromptCardList = ({ data, handleTagClick }) => {
   return (
     <div className={'mt-16 prompt_layout'}>
       {data.map(post => {
@@ -34,7 +28,7 @@ const Feed = () => {
       return tags || prompt || username || email;
     });
   }, [posts, searchText]);
-  const handleSearchText = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchText = ({ target: { value } }) => {
     setSearchText(value);
   };
 
